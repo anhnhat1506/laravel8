@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function __contruct(){
+        $this->middleware(['auth']);
+    }
     public function index(){
-
-        dd(auth()->user());
         return view('dashboard');
     }
 }
